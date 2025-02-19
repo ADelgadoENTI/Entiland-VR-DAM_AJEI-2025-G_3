@@ -36,6 +36,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
             if (matchStarted)
             {
                 generalTimer -= Time.deltaTime;
+                Debug.Log(generalTimer);
                 if(generalTimer <= 0)
                 {
                     generalTimer = 0;
@@ -60,11 +61,18 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
         {
             //enseñar texto numero
             //3
+            Debug.Log("3");
             yield return new WaitForSeconds(1f);
             //2
+            Debug.Log("2");
+
             yield return new WaitForSeconds(1f);
             //1
+            Debug.Log("1");
+
             yield return new WaitForSeconds(1f);
+            Debug.Log("Start");
+
             //que ponga que esta abierto el local
             matchStarted = true;
         }
