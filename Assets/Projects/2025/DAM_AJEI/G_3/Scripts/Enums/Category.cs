@@ -1,6 +1,6 @@
 namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
 {
-    public enum PrimaryCategory
+    public enum Category
     {
         BREAD,
         PROTEIN,

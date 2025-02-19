@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06f2fccc4352f654196e44d02d802347, type: 3}
-  m_Name: Tomato
+  m_Script: {fileID: 11500000, guid: 448d41484a5ce6d4882d69640121d595, type: 3}
+  m_Name: R_BubbleTea
   m_EditorClassIdentifier: 
-  PrimaryCategory: 0
-  IngridientType: 0
-  Price: 0
+  ObligatoryIngredients: 
+  BannedIngredients: 
