@@ -2,12 +2,12 @@ using UnityEngine;
 
 namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
 {
-    [CreateAssetMenu(fileName = "Ingridient", menuName = "ScriptableObjects/Ingridient", order = 0)]
+    [CreateAssetMenu(fileName = "Ingredient", menuName = "ScriptableObjects/Ingredient", order = 0)]
     public class Ingredient : ScriptableObject
     {
-        public PrimaryCategory PrimaryCategory;
+        public Category PrimaryCategory;
 
-        public IngredientType IngridientType;
+        public IngredientType IngredientType;
 
         public float Price;
 
