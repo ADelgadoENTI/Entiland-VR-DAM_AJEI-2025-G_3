@@ -7,7 +7,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
 {
     public class TimeBar : MonoBehaviour
     {
-        [SerializeField]private float _timeMax; 
+        [SerializeField]public  float _timeMax; 
         private float _timeMaxCounter;
 
         [SerializeField] private Image _timeBar;
@@ -21,7 +21,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
         {
             if (_timeMaxCounter <= 0)
             {
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
             else
             {
@@ -31,6 +31,12 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
                 
                 _timeBar.fillAmount = amount;
             }
+        }
+
+        public void SetTime(float time)
+        {
+            _timeMax = time;
+            _timeMaxCounter = _timeMax;
         }
     }
 }

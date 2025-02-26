@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
 {
-    public class Pedido : MonoBehaviour
+    public class PedidoTablet : MonoBehaviour
     {
-        public Ingredient pedido;
         [SerializeField] private TimeBar _tBar;
         [SerializeField] private Image _sprite;
 
-        private void Start()
+        public void Active(Recipe Pedido, float PacienciaCliente)
         {
-
+            _tBar.SetTime(Pedido.Time + PacienciaCliente);
+            _sprite.sprite = Pedido.Sprite;
         }
     }
 }

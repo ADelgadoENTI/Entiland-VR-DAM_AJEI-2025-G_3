@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 448d41484a5ce6d4882d69640121d595, type: 3}
   m_Name: Recipe_Burger
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 0}
-  Time: 0
+  Sprite: {fileID: 21300000, guid: 12b36a74bc759df4082a6b56296cf91c, type: 3}
+  Time: 20
   Ingridients:
   - Category: 0
     Ammount: 2
