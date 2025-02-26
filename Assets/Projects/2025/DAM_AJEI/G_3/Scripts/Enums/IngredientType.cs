@@ -2,15 +2,15 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
 {
     public enum IngredientType
     {
-        BURGER_BREAD,
         RAT,
+        POOP,
         COCKROACH,
         TOMATO,
         LETTUCE,
         CHEESE,
-        POOP,
+        BURGER_BREAD,
         HOTDOG_BREAD,
-        TORTILLA,
+        PIZZA_MASS,
         KETCHUP,
         LIQUID
     }
