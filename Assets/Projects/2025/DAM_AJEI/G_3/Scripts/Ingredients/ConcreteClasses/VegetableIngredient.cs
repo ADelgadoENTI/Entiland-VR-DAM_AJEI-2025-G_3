@@ -1,6 +1,6 @@
 namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
 {
-    public abstract class VegetableIngredient : BaseIngredient
+    public class VegetableIngredient : BaseIngredient
     {
         private void Start()
         {

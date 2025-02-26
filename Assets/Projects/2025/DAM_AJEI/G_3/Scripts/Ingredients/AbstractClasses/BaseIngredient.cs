@@ -4,24 +4,30 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
 {
     public abstract class BaseIngredient : MonoBehaviour
     {
-        [SerializeField] protected Transform Socket { get; private set; }
+        [SerializeField] private Transform Socket;
 
-        protected Category IngredientCategory { get; private set; }
+        protected Category IngredientCategory;
 
-        protected IngredientType Type { get; private set; }
+        public IngredientType Type;
+
+        public bool IsOnPlate;
 
         public void PlaceInSocket(Transform ingredient)
         {
             if (Socket != null)
             {
-                ingredient.parent = transform;
+                ingredient.parent = Socket;
                 ingredient.position = Socket.position;
+                ingredient.position = Vector3.zero;
+                Debug.Log($"{ingredient.name}: Placed on Socket");
             }
             else
             {
                 Debug.LogWarning("Socket is not assigned");
             }
         }
+
+        public Category GetCategory() { return IngredientCategory; }
     }
 }
 

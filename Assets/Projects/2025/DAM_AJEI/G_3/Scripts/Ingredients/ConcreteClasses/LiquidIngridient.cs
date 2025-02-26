@@ -1,10 +1,10 @@
 namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
 {
-    public abstract class OtherIngredient : BaseIngredient
+    public class LiquidIngridient : BaseIngredient
     {
         private void Start()
         {
-            IngredientCategory = Category.OTHER;
+            IngredientCategory = Category.SAUCE;
         }
     }
 }
