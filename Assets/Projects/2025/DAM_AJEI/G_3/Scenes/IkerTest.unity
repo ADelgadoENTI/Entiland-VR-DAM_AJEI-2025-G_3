@@ -329,7 +329,7 @@ MonoBehaviour:
   Realspeed: 0
   direction: 0
   stop: 0
-  place1: {fileID: 1588486326}
+  place1: {fileID: 590083189}
   place2: {fileID: 1442560544}
   rand: 0
 --- !u!1 &590083188
@@ -356,7 +356,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 590083188}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7049341, y: -12.004947, z: 10.17293}
+  m_LocalPosition: {x: 1.335, y: 0, z: 0}
   m_LocalScale: {x: 0.27122322, y: 0.27122322, z: 0.27122322}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -49,7 +49,7 @@ public class Enviroment : MonoBehaviour
         stop = true;
         yield return new WaitForSeconds(Random.Range(1, 5));
 
-        rand = Random.Range(0, 1);
+        rand = Random.Range(0, 2);
         if(rand == 1)
         {
             if (direction == true)
