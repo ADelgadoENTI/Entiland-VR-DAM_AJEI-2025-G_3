@@ -9,15 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 448d41484a5ce6d4882d69640121d595, type: 3}
-  m_Name: Recipe_Burger
+  m_Script: {fileID: 11500000, guid: dce6c3625bdcd3543814a3146aff5efc, type: 3}
+  m_Name: Menu
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 0}
-  Time: 0
-  Ingridients:
-  - Category: 0
-    Ammount: 2
-  - Category: 2
-    Ammount: 1
-  - Category: 1
-    Ammount: 1
+  Recipes: []

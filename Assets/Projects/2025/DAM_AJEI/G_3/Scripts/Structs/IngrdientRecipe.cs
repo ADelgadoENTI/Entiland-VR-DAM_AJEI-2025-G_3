@@ -1,9 +1,11 @@
-using EntilandVR.DosCinco.DAM_AJEI.G_TRES;
 using System;
 
-[Serializable]
-public struct IngridientRecipe
+namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
 {
-    public Category Category;
-    public int Ammount;
+    [Serializable]
+    public struct IngridientRecipe
+    {
+        public IngredientType Category;
+        public int Ammount;
+    }
 }
