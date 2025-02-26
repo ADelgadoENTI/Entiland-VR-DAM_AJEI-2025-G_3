@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
@@ -12,6 +13,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
         public float generalTimer = 0;
         public bool matchStarted = false;
         public int completedDishes = 0;
+        public TMP_Text texto;
         [SerializeField]private float _maxTimer;
 
         private void Awake()
@@ -59,21 +61,24 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
 
         private IEnumerator StartMatch()
         {
-            //enseñar texto numero
+
             //3
+            texto.text = "3";
             Debug.Log("3");
             yield return new WaitForSeconds(1f);
             //2
+            texto.text = "2";
             Debug.Log("2");
 
             yield return new WaitForSeconds(1f);
             //1
+            texto.text = "1";
             Debug.Log("1");
 
             yield return new WaitForSeconds(1f);
-            Debug.Log("Start");
-
             //que ponga que esta abierto el local
+            texto.text = "OPEN";
+            Debug.Log("Start");
             matchStarted = true;
         }
 
