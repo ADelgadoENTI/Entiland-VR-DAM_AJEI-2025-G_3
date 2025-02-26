@@ -6,7 +6,8 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
     [CreateAssetMenu(fileName = "Recipe", menuName = "ScriptableObjects/Recipe", order = 1)]
     public class Recipe : ScriptableObject
     {
-        public List<Category> ObligatoryIngredients;
-        public List<IngredientType> BannedIngredients;
+        public Sprite Sprite;
+        public float Time;
+        public List<IngridientRecipe> Ingridients;
     }
 }
