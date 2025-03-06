@@ -4,6 +4,13 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
 {
     public class IngridientCollisions : MonoBehaviour
     {
+        private BaseIngredient _thisIngridient;
+
+        private void Start()
+        {
+            _thisIngridient = GetComponent<BaseIngredient>();
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             BaseIngredient otherIngridient = other.GetComponent<BaseIngredient>();
@@ -11,6 +18,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
             if (otherIngridient != null && otherIngridient.IsOnPlate)
             {
                 otherIngridient.PlaceInSocket(transform);
+                _thisIngridient.Plate = otherIngridient.Plate;
                 Destroy(this);
             }
             else if(plate != null && !plate.HasIngridient)

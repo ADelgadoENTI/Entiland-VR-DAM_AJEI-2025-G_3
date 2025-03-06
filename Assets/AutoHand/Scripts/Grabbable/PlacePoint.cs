@@ -183,6 +183,7 @@ namespace Autohand {
                 return true;
 
             return false;
+
         }
 
         int lastOverlapCount = 0;

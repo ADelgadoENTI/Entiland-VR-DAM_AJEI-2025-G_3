@@ -1,27 +1,85 @@
-using EntilandVR.DosCinco.DAM_AJEI.G_TRES;
-using System.Net.Sockets;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Plate : MonoBehaviour
+namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
 {
-    [SerializeField] private Transform _socket;
-
-    public bool HasIngridient;
-
-    public void PlaceInSocket(Transform ingredient)
+    public class Plate : MonoBehaviour
     {
-        if (_socket != null)
+        [SerializeField] private Transform _socket;
+        [SerializeField] private Menu _menu;
+
+        private Dictionary<IngredientType, int> _ingridients = new Dictionary<IngredientType, int>();
+
+        public bool HasIngridient;
+
+        public void PlaceInSocket(Transform ingredient)
         {
-            ingredient.parent = _socket;
-            ingredient.position = _socket.position;
-            ingredient.GetComponent<BaseIngredient>().IsOnPlate = true;
-            Debug.Log($"{ingredient.name} placed on plate");
-            ingredient.position = Vector3.zero;
-            HasIngridient = true;
+            if (_socket != null)
+            {
+                ingredient.parent = _socket;
+                //ingredient.position = _socket.position;
+                BaseIngredient ing = ingredient.GetComponent<BaseIngredient>();
+                ing.IsOnPlate = true;
+                ingredient.localPosition = Vector3.zero;
+                ing.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                ing.GetComponent<Rigidbody>().isKinematic = true;
+                HasIngridient = true;
+                IngredientType type = ing.Type;
+                ing.Plate = this;
+                AddIngridient(type);
+                //Debug.Log($"{ingredient.name} placed on plate");
+            }
+            else
+            {
+                Debug.LogWarning("Socket is not assigned");
+            }
         }
-        else
+
+        
+        public void AddIngridient(IngredientType type)
         {
-            Debug.LogWarning("Socket is not assigned");
+            //Debug.LogWarning(type);
+            if (_ingridients.ContainsKey(type))
+            {
+                _ingridients[type]++;
+            }
+            else
+            {
+                _ingridients.Add(type, 1);
+            }
+            //Debug.Log($"{type} exists {_ingridients[type]}");
+            CheckRecipe();
+        }
+
+        private void CheckRecipe()
+        {
+            foreach(Recipe recipe in _menu.Recipes) 
+            {
+                int matchCount = 0;
+                foreach (IngridientRecipe ingridient in recipe.Ingridients) 
+                {
+                    IngredientType type = ingridient.Category;
+                    if (_ingridients.ContainsKey((type)))
+                    {
+                        matchCount++;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                if (matchCount == recipe.Ingridients.Count)
+                {
+                    Debug.LogWarning($"Recipe '{recipe.name}' is complete!");
+                    break;
+                }
+                else
+                {
+                    Debug.Log($"Recipe '{recipe.name}' is incomplete.");
+                }
+
+            }
         }
     }
 }
