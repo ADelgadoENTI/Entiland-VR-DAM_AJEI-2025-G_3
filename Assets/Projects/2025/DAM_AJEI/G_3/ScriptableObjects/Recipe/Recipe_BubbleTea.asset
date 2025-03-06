@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Recipe_BubbleTea
   m_EditorClassIdentifier: 
   Sprite: {fileID: 0}
+  Prefab: {fileID: 0}
   Time: 0
   Ingridients:
   - Category: 10
-    Ammount: 1
   - Category: 1
-    Ammount: 1
+  - Category: 11
