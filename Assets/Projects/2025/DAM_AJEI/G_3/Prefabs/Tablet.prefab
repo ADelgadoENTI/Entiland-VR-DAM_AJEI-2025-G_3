@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 2643190247792284150}
   - component: {fileID: 397551169053807078}
   - component: {fileID: 713592766685381894}
+  - component: {fileID: 7731056380738051485}
   m_Layer: 0
   m_Name: Tablet
   m_TagString: Untagged
@@ -211,7 +212,7 @@ MonoBehaviour:
   grabType: 0
   handType: 0
   singleHandOnly: 1
-  allowHeldSwapping: 1
+  allowHeldSwapping: 0
   instantGrab: 0
   useGentleGrab: 0
   maintainGrabOffset: 0
@@ -341,6 +342,56 @@ MonoBehaviour:
   - {fileID: 8165760863244576169}
   - {fileID: 2376626970440169678}
   - {fileID: 4555974706403560937}
+--- !u!114 &7731056380738051485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3009159097901426129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935aaf7da50abf94697c8d70a7a71efe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ignoreMe: 0
+  instantPull: 1
+  grabType: 0
+  archMultiplier: 0.6
+  gravitationVelocity: 1
+  rotate: 1
+  rotationSpeed: 1
+  ignoreHighlights: 1
+  targetedMaterial: {fileID: 0}
+  selectedMaterial: {fileID: 0}
+  showEvents: 1
+  OnPull:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2643190247792284150}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_isKinematic
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  StartTargeting:
+    m_PersistentCalls:
+      m_Calls: []
+  StopTargeting:
+    m_PersistentCalls:
+      m_Calls: []
+  StartSelecting:
+    m_PersistentCalls:
+      m_Calls: []
+  StopSelecting:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4404845890354834745
 GameObject:
   m_ObjectHideFlags: 0
