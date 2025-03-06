@@ -32,7 +32,6 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
         {
             generalTimer = _maxTimer;
         }
-
         void Update()
         {
             if (matchStarted)
@@ -49,7 +48,6 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
                 }
             }
         }
-
         public void DishCompleted()
         {
             completedDishes++;
@@ -58,7 +56,6 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
                 StartCoroutine(StartMatch());
             }
         }
-
         private IEnumerator StartMatch()
         {
 
