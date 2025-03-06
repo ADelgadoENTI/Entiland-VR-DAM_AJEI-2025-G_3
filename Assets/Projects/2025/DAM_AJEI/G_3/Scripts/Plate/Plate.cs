@@ -1,3 +1,4 @@
+using Autohand;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,6 +28,8 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
                 IngredientType type = ing.Type;
                 ing.Plate = this;
                 AddIngridient(type);
+                ingredient.GetComponent<Grabbable>().enabled = false;
+                ingredient.GetComponent<DistanceGrabbable>().enabled = false;
                 //Debug.Log($"{ingredient.name} placed on plate");
             }
             else

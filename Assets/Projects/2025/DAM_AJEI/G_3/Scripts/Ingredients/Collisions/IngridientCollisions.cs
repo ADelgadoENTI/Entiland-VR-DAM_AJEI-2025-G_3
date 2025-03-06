@@ -1,3 +1,4 @@
+using Autohand;
 using UnityEngine;
 
 namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
@@ -19,11 +20,15 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
             {
                 otherIngridient.PlaceInSocket(transform);
                 _thisIngridient.Plate = otherIngridient.Plate;
+                
+                transform.rotation = Quaternion.identity;
                 Destroy(this);
             }
             else if(plate != null && !plate.HasIngridient)
             {
+                transform.rotation = Quaternion.identity;
                 plate.PlaceInSocket(transform);
+                
                 Destroy(this);
             }
         }

@@ -1,3 +1,4 @@
+using Autohand;
 using System.Net.NetworkInformation;
 using UnityEngine;
 
@@ -23,6 +24,9 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
                 Plate.AddIngridient(ingredient.GetComponent<BaseIngredient>().Type);
                 ingredient.GetComponent<Rigidbody>().velocity = Vector3.zero;
                 ingredient.GetComponent<Rigidbody>().isKinematic = true;
+
+                ingredient.GetComponent<Grabbable>().enabled = false;
+                ingredient.GetComponent<DistanceGrabbable>().enabled = false;
             }
             else
             {
