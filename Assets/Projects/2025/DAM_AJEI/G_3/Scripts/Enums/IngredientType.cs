@@ -12,6 +12,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
         HOTDOG_BREAD,
         PIZZA_MASS,
         KETCHUP,
-        LIQUID
+        LIQUID,
+        RECIPIENT
     }
 }
