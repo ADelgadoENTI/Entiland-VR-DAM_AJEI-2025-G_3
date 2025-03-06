@@ -12,4 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dce6c3625bdcd3543814a3146aff5efc, type: 3}
   m_Name: Menu
   m_EditorClassIdentifier: 
-  Recipes: []
+  Recipes:
+  - {fileID: 11400000, guid: 628475b707b23a542848da4660ceb916, type: 2}
+  - {fileID: 11400000, guid: b3b60645e3773a54e864a1a436d283a6, type: 2}
+  - {fileID: 11400000, guid: a7f214051bbd7cb42b6fa728fdc40d03, type: 2}
+  - {fileID: 11400000, guid: 8542c6b9ad41ee249973a289f8e31cca, type: 2}
+  - {fileID: 11400000, guid: a728b33512465644f8f86197a035bb72, type: 2}
+  - {fileID: 11400000, guid: 68f85c66defea4049bb07f00976359b8, type: 2}
+  - {fileID: 11400000, guid: c5072335d2d2a634f8be89dab8d8adbc, type: 2}

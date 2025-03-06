@@ -7,6 +7,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
     public class Recipe : ScriptableObject
     {
         public Sprite Sprite;
+        public GameObject Prefab;
         public float Time;
         public List<IngridientRecipe> Ingridients;
     }

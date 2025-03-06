@@ -6,6 +6,5 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
     public struct IngridientRecipe
     {
         public IngredientType Category;
-        public int Ammount;
     }
 }
