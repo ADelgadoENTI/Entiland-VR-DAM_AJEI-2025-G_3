@@ -11,9 +11,17 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
         public bool reachedCenter = false;
         public Vector3 objectivePosition;
         public bool finishedDish = false;
+        public List<Recipe> recipes;
+        public Recipe pedido;
+        private float paciencia; 
+        private bool dishAnnounced = false;
         void Start()
         {
             StartCoroutine(GoStreet());
+            int rand = Random.Range(0, recipes.Count);
+
+            pedido = recipes[rand];
+            paciencia = Random.Range(0, 31);
         }
 
         private IEnumerator GoStreet()
@@ -38,6 +46,12 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
                     transform.position += transform.forward * Time.deltaTime * speed;
                 }
                 yield return new WaitForEndOfFrame();
+            }
+            if (!dishAnnounced)
+            {
+                GameManager.instance.tablet.ActivePedido(pedido, paciencia);
+
+                dishAnnounced = true;
             }
         }
 
