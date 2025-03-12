@@ -7,10 +7,6 @@ TagManager:
   - Teleport
   - Obstacle
   - Objective
-  - GoEat
-  - limit
-  - Ingridient
-  - Dish
   layers:
   - Default
   - TransparentFX
