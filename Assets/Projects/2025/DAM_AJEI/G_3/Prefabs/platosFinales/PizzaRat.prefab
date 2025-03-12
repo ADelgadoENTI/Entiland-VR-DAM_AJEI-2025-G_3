@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1338972074792635988}
   - component: {fileID: 5390118295111523426}
   - component: {fileID: 7642209268022659545}
+  - component: {fileID: -6181427411120259308}
   m_Layer: 0
   m_Name: PizzaRat
   m_TagString: Untagged
@@ -34,7 +35,7 @@ Transform:
   m_Children:
   - {fileID: 441025868670420209}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2044727131627842421
 MonoBehaviour:
@@ -207,6 +208,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.46914363, y: 0.46630907, z: 0.47670987}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-6181427411120259308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305253298424121216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb4d9a9f9eb22048a4b206f1ed76685, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 6
 --- !u!1 &6239064128321129805
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,6 +283,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: 2b044be7d7b85f6499e5bb1313ade3e9, type: 2}
+  - {fileID: 2100000, guid: 2b044be7d7b85f6499e5bb1313ade3e9, type: 2}
+  - {fileID: 2100000, guid: 2b044be7d7b85f6499e5bb1313ade3e9, type: 2}
   - {fileID: 2100000, guid: 2b044be7d7b85f6499e5bb1313ade3e9, type: 2}
   - {fileID: 2100000, guid: 2b044be7d7b85f6499e5bb1313ade3e9, type: 2}
   - {fileID: 2100000, guid: 2b044be7d7b85f6499e5bb1313ade3e9, type: 2}

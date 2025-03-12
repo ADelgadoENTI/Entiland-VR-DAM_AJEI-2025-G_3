@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3277301178858501501}
   - component: {fileID: 1639041332508862419}
   - component: {fileID: 7377541164032624697}
+  - component: {fileID: -8870853380117979434}
   m_Layer: 0
   m_Name: BurgerCucaracha
   m_TagString: Untagged
@@ -207,6 +208,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.46914363, y: 0.46630907, z: 0.47670987}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-8870853380117979434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2349299989643623863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb4d9a9f9eb22048a4b206f1ed76685, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 1
 --- !u!1 &2847294357803860591
 GameObject:
   m_ObjectHideFlags: 0

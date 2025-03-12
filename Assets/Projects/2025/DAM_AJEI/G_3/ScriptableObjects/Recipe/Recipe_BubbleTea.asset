@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Recipe_BubbleTea
   m_EditorClassIdentifier: 
   Sprite: {fileID: 0}
-  Prefab: {fileID: 919132149155446097, guid: 34a80c466d94946478c753611c39e7f6, type: 3}
+  Prefab: {fileID: 8270118910425672232, guid: d20a1b27541cda84f9d3cdb968671f06, type: 3}
   Time: 0
   Ingridients:
   - Category: 10

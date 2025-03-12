@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Recipe_HotDog_Rat
   m_EditorClassIdentifier: 
   Sprite: {fileID: 0}
-  Prefab: {fileID: 919132149155446097, guid: ea5fa72a6745f584493e40e2289445e6, type: 3}
+  Prefab: {fileID: 4070540128545180300, guid: f02defc294b82d245ad7ed98161b65fb, type: 3}
   Time: 0
   Ingridients:
   - Category: 7
   - Category: 0
   - Category: 9
+  ID: 4

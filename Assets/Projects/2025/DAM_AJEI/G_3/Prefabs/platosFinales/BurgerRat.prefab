@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6684888238608304807}
   - component: {fileID: 6136658155038404489}
   - component: {fileID: 755305888775874414}
+  - component: {fileID: -8627814207270085365}
   m_Layer: 0
   m_Name: BurgerRat
   m_TagString: Untagged
@@ -207,6 +208,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.46914363, y: 0.46630907, z: 0.47670987}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-8627814207270085365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2655919944054378301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb4d9a9f9eb22048a4b206f1ed76685, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 2
 --- !u!1 &6835455775155216370
 GameObject:
   m_ObjectHideFlags: 0

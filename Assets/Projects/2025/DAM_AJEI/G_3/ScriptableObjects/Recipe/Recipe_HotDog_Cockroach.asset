@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Recipe_HotDog_Cockroach
   m_EditorClassIdentifier: 
   Sprite: {fileID: 0}
-  Prefab: {fileID: 919132149155446097, guid: 5c9579db070da62469fbe32502d80569, type: 3}
+  Prefab: {fileID: 5180922292289606339, guid: 34be32b25ea66f741912412fc5383d42, type: 3}
   Time: 0
   Ingridients:
   - Category: 7
   - Category: 2
   - Category: 9
+  ID: 3

@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Recipe_Burger_Cockroach
   m_EditorClassIdentifier: 
   Sprite: {fileID: 0}
-  Prefab: {fileID: 919132149155446097, guid: 59ce1e179868cd043983c368c001f278, type: 3}
+  Prefab: {fileID: 2349299989643623863, guid: f3a97db22fcb0f442819df38a6bc5d90, type: 3}
   Time: 0
   Ingridients:
   - Category: 6
   - Category: 2
   - Category: 4
   - Category: 3
+  ID: 1

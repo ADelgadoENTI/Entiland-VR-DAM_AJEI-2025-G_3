@@ -10,5 +10,6 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
         public GameObject Prefab;
         public float Time;
         public List<IngridientRecipe> Ingridients;
+        public int ID;
     }
 }
