@@ -64,11 +64,20 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
             Destroy(gameObject);
         }
 
+        public void PedidoEntregado()
+        {
+            FinishDish();
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Objective"))
             {
                 reachedCenter = true;
+            }
+            else if(other.TryGetComponent(out Dish d))
+            {
+                if(d.id == pedido.ID) PedidoEntregado();
             }
         }
     }
