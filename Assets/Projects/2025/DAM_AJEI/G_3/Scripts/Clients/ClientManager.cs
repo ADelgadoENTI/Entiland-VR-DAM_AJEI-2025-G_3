@@ -13,11 +13,21 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
         public Transform[] queuePositions;
         void Start()
         {
-
+            StartCoroutine(SpawnClients());
         }
         void Update()
         {
 
+        }
+        IEnumerator SpawnClients()
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                clients[i] = Instantiate(client, spawnpoints[Random.Range(0, 2)].transform.position, Quaternion.identity);
+                clients[i].gameObject.transform.rotation = Quaternion.LookRotation(goEat.transform.position - clients[i].transform.position, Vector3.up);
+                yield return new WaitForSeconds(.25f);
+            }
+            NextClient();
         }
         public void NextClient()
         {
@@ -39,7 +49,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
                 int tempLen = 4 - newClients.Length;
                 if (tempLen > 0)
                 {
-                    for (int i = 0; i < tempLen; i++)
+                    for (int i = 0; i < 4; i++)
                     {
                         if (newClients[i] == null)
                         {
