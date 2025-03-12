@@ -43,7 +43,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("GoEat"))
+            if (other.CompareTag("Objective"))
             {
                 reachedCenter = true;
             }
