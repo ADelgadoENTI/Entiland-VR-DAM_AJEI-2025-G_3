@@ -21,15 +21,16 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
                 //ingredient.position = _socket.position;
                 BaseIngredient ing = ingredient.GetComponent<BaseIngredient>();
                 ing.IsOnPlate = true;
-                ingredient.localPosition = Vector3.zero;
-                ing.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                ing.GetComponent<Rigidbody>().isKinematic = true;
+                
                 HasIngridient = true;
                 IngredientType type = ing.Type;
                 ing.Plate = this;
                 AddIngridient(type);
                 ingredient.GetComponent<Grabbable>().enabled = false;
                 ingredient.GetComponent<DistanceGrabbable>().enabled = false;
+                ingredient.localPosition = Vector3.zero;
+                ing.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                ing.GetComponent<Rigidbody>().isKinematic = true;
                 //Debug.Log($"{ingredient.name} placed on plate");
             }
             else
