@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f1c6d022d16f0944492f887b2602a720
+guid: 480f75ddad75d404d992a08448259f96
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Assets
-    second: {fileID: 2100000, guid: 2b044be7d7b85f6499e5bb1313ade3e9, type: 2}
+      name: Timber
+    second: {fileID: 2100000, guid: 7e9f75d39ff453c44aa9399d6aa73e2c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
