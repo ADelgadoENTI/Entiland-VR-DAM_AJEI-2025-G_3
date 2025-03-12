@@ -6,11 +6,24 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
 {
     public class ClientManager : MonoBehaviour
     {
+        public static ClientManager instance;
         public GameObject[] clients;
         public GameObject client;
         public Transform[] spawnpoints;
         public GameObject goEat;
         public Transform[] queuePositions;
+
+        private void Awake()
+        {
+            if(instance == null)
+            {
+                instance = this;
+            }
+            else
+            {
+                Destroy(this);
+            }
+        }
         void Start()
         {
             StartCoroutine(SpawnClients());
@@ -29,6 +42,23 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
             }
             NextClient();
         }
+
+        public void KillClient(GameObject objeto)
+        {
+            for(int i = 0; i< 4; i++)
+            {
+                try 
+                {
+                    if(clients[i] == objeto)
+                        clients[i] = null;
+                }
+                catch
+                {
+                    Debug.Log("No existe");
+                }
+            }
+            Destroy(objeto);
+        }
         public void NextClient()
         {
             int length = clients.Length;
@@ -39,11 +69,16 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
                 newClients = new GameObject[length];
                 for (int i = 0; i < length; i++)
                 {
-                    clients[i].TryGetComponent(out ClientMovement cL);
-                    if (!cL.finishedDish)
+                    if (clients[i] != null)
                     {
-                        newClients[temp] = clients[i];
-                        temp++;
+                        if (clients[i].TryGetComponent(out ClientMovement cL))
+                        {
+                            if (!cL.finishedDish)
+                            {
+                                newClients[temp] = clients[i];
+                                temp++;
+                            }
+                        }
                     }
                 }
                 int tempLen = 4 - newClients.Length;
@@ -62,8 +97,17 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
             }
             for(int i = 0; i < clients.Length; i++)
             {
-                clients[i].TryGetComponent(out ClientMovement cL);
-                cL.objectivePosition = queuePositions[i].position;
+                try
+                {
+                    if (clients[i].TryGetComponent(out ClientMovement cL))
+                    {
+                        cL.objectivePosition = queuePositions[i].position;
+                    }
+                }
+                catch
+                {
+                    Debug.Log("No existe");
+                }
             }
         }
     }

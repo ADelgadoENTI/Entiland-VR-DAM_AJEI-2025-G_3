@@ -60,8 +60,9 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
         public void FinishDish()
         {
             finishedDish = true;
+            ClientManager.instance.NextClient();
             //hacer algo
-            Destroy(gameObject);
+            ClientManager.instance.KillClient(gameObject);
         }
 
         public void PedidoEntregado()
