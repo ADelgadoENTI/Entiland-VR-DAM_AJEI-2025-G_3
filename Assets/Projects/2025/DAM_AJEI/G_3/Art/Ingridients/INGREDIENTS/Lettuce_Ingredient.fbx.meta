@@ -7,37 +7,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Assets.204
-    second: {fileID: 2100000, guid: 2b044be7d7b85f6499e5bb1313ade3e9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Assets.205
-    second: {fileID: 2100000, guid: 2b044be7d7b85f6499e5bb1313ade3e9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Assets.206
-    second: {fileID: 2100000, guid: 2b044be7d7b85f6499e5bb1313ade3e9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Assets.207
-    second: {fileID: 2100000, guid: 2b044be7d7b85f6499e5bb1313ade3e9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Assets.208
-    second: {fileID: 2100000, guid: 2b044be7d7b85f6499e5bb1313ade3e9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Assets.209
-    second: {fileID: 2100000, guid: 2b044be7d7b85f6499e5bb1313ade3e9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Assets.210
+      name: Assets
     second: {fileID: 2100000, guid: 2b044be7d7b85f6499e5bb1313ade3e9, type: 2}
   materials:
     materialImportMode: 2

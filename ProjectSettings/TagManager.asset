@@ -9,6 +9,8 @@ TagManager:
   - Objective
   - GoEat
   - limit
+  - Ingridient
+  - Dish
   layers:
   - Default
   - TransparentFX
