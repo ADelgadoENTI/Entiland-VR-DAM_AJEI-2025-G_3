@@ -24,7 +24,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
         {
             if (other.GetComponent<Grabbable>() != null)
             {
-                Spawn();
+                Invoke("Spawn", 1f);
             }
         }
     }
