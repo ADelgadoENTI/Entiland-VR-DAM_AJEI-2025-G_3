@@ -20,7 +20,7 @@ public class Container : MonoBehaviour
 
     private IEnumerator SquashAndStretch()
     {
-        Vector3 newScale = new Vector3(0.9f, 1.1f, 0);
+        Vector3 newScale = new Vector3(0.9f, 1.1f, 1);
         transform.localScale = newScale;
         yield return new WaitForSeconds(.5f);
         transform.localScale = Vector3.one;
