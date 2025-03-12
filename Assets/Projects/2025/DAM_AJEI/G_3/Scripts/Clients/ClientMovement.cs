@@ -28,7 +28,6 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
         {
             while (!reachedCenter)
             {
-                Debug.Log("Go");
                 transform.position += transform.forward * Time.deltaTime * speed;
                 yield return new WaitForEndOfFrame();
             }
@@ -42,17 +41,20 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
             {
                 if(Vector3.Distance(transform.position, objectivePosition) > 2)
                 {
-                    Debug.Log(Vector3.Distance(transform.position, objectivePosition));
                     transform.position += transform.forward * Time.deltaTime * speed;
+                }
+                else
+                {
+                    if (!dishAnnounced)
+                    {
+                        GameManager.instance.tablet.ActivePedido(pedido, paciencia, this);
+                        Debug.Log("Tabelt");
+                        dishAnnounced = true;
+                    }
                 }
                 yield return new WaitForEndOfFrame();
             }
-            if (!dishAnnounced)
-            {
-                GameManager.instance.tablet.ActivePedido(pedido, paciencia);
 
-                dishAnnounced = true;
-            }
         }
 
         public void FinishDish()

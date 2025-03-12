@@ -9,14 +9,14 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
         public GameObject[] pedidos;
 
 
-        public void ActivePedido(Recipe Pedido, float PacienciaCliente)
+        public void ActivePedido(Recipe Pedido, float PacienciaCliente, ClientMovement client)
         {
             foreach (GameObject pedido in pedidos)
             {
                 if (!pedido.active)
                 {
                     pedido.SetActive(true);
-                    pedido.GetComponent<PedidoTablet>().Active(Pedido, PacienciaCliente);
+                    pedido.GetComponent<PedidoTablet>().Active(Pedido, PacienciaCliente, client);
                     break;
                 }
             }
