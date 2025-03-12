@@ -1,4 +1,5 @@
 using Autohand;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,7 +18,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
         {
             if (_socket != null)
             {
-                ingredient.parent = _socket;
+                
                 //ingredient.position = _socket.position;
                 BaseIngredient ing = ingredient.GetComponent<BaseIngredient>();
                 ing.IsOnPlate = true;
@@ -30,7 +31,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
                 ingredient.GetComponent<DistanceGrabbable>().enabled = false;
                 ing.GetComponent<Rigidbody>().velocity = Vector3.zero;
                 ing.GetComponent<Rigidbody>().isKinematic = true;
-                ingredient.localPosition = Vector3.zero;
+                
                 //Debug.Log($"{ingredient.name} placed on plate");
             }
             else
@@ -39,6 +40,12 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
             }
         }
 
+        private IEnumerator WaitToNextFrame(Transform ingredient)
+        {
+            yield return new WaitForEndOfFrame();
+            ingredient.parent = _socket;
+            ingredient.localPosition = Vector3.zero;
+        }
         
         public void AddIngridient(IngredientType type)
         {
