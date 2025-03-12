@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 4217045134018833125}
   - component: {fileID: 748829413670643563}
   - component: {fileID: 1385964540567010720}
-  - component: {fileID: 9220083524765587038}
   - component: {fileID: -3785421830735288722}
   m_Layer: 0
   m_Name: Ketchup
@@ -126,8 +125,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
+  m_UseGravity: 1
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -185,7 +184,7 @@ MonoBehaviour:
   jointedBodies: []
   heldIgnoreColliders: []
   pullApartBreakOnly: 1
-  showEvents: 0
+  showEvents: 1
   onGrab:
     m_PersistentCalls:
       m_Calls:
@@ -201,7 +200,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 9220083524765587038}
+      - m_Target: {fileID: 5503792391222584480}
         m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
         m_MethodName: set_isTrigger
         m_Mode: 6
@@ -216,7 +215,7 @@ MonoBehaviour:
   onRelease:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9220083524765587038}
+      - m_Target: {fileID: 5503792391222584480}
         m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
         m_MethodName: set_isTrigger
         m_Mode: 6
@@ -244,28 +243,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   lockHandOnGrab: 0
---- !u!64 &9220083524765587038
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2710067059394108289}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 7794565511940539504, guid: 29980609d11ad394fbffff88e54dca5f, type: 3}
 --- !u!114 &-3785421830735288722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,6 +292,7 @@ GameObject:
   - component: {fileID: 227781179785578644}
   - component: {fileID: 7605953625820447898}
   - component: {fileID: 7209362451609171019}
+  - component: {fileID: 5503792391222584480}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -387,3 +365,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5503792391222584480
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4412706688972494515}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7794565511940539504, guid: 29980609d11ad394fbffff88e54dca5f, type: 3}
