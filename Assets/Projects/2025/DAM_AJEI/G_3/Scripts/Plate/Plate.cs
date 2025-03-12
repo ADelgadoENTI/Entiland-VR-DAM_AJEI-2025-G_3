@@ -11,6 +11,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
         [SerializeField] private Menu _menu;
 
         private Dictionary<IngredientType, int> _ingridients = new Dictionary<IngredientType, int>();
+        private List<GameObject> _ingridientsGO = new List<GameObject>();
 
         public bool HasIngridient;
 
@@ -26,7 +27,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
                 HasIngridient = true;
                 IngredientType type = ing.Type;
                 ing.Plate = this;
-                AddIngridient(type);
+                AddIngridient(type, ingredient.gameObject);
                 ingredient.GetComponent<Grabbable>().enabled = false;
                 ingredient.GetComponent<DistanceGrabbable>().enabled = false;
                 ing.GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -48,7 +49,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
             ingredient.localPosition = Vector3.zero;
         }
         
-        public void AddIngridient(IngredientType type)
+        public void AddIngridient(IngredientType type, GameObject ingredient)
         {
             //Debug.LogWarning(type);
             if (_ingridients.ContainsKey(type))
@@ -59,12 +60,14 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
             {
                 _ingridients.Add(type, 1);
             }
+            _ingridientsGO.Add(ingredient);
             //Debug.Log($"{type} exists {_ingridients[type]}");
-            CheckRecipe();
+            StartCoroutine(CheckRecipe());
         }
 
-        private void CheckRecipe()
+        private IEnumerator CheckRecipe()
         {
+            yield return new WaitForEndOfFrame();
             foreach(Recipe recipe in _menu.Recipes) 
             {
                 int matchCount = 0;
@@ -84,11 +87,20 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
                 if (matchCount == recipe.Ingridients.Count)
                 {
                     Debug.LogWarning($"Recipe '{recipe.name}' is complete!");
+                    GameObject dish = Instantiate(recipe.Prefab, _socket);
+                    foreach(GameObject go in _ingridientsGO)
+                    {
+                        Destroy(go);
+                    }
+                    _ingridientsGO.Clear();
+                    _ingridients.Clear();
+                    dish.transform.SetParent(null);
+                    GameManager.instance.DishCompleted();
                     break;
                 }
                 else
                 {
-                    Debug.Log($"Recipe '{recipe.name}' is incomplete.");
+                    //Debug.Log($"Recipe '{recipe.name}' is incomplete.");
                 }
 
             }

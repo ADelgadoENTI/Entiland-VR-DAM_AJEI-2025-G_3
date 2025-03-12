@@ -13,13 +13,10 @@ MonoBehaviour:
   m_Name: Recipe_Pizza_Rat
   m_EditorClassIdentifier: 
   Sprite: {fileID: 0}
+  Prefab: {fileID: 919132149155446097, guid: 04e7b9b89de6aa2409ec85670d9dba6b, type: 3}
   Time: 0
   Ingridients:
   - Category: 8
-    Ammount: 1
   - Category: 9
-    Ammount: 1
   - Category: 5
-    Ammount: 1
   - Category: 0
-    Ammount: 1

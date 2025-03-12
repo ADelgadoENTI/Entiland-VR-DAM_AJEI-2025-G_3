@@ -23,7 +23,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
                 
                 
                 //Debug.LogWarning($"{ingredient.name}: Placed on Socket");
-                Plate.AddIngridient(ingredient.GetComponent<BaseIngredient>().Type);
+                Plate.AddIngridient(ingredient.GetComponent<BaseIngredient>().Type, gameObject);
                 ingredient.GetComponent<Rigidbody>().velocity = Vector3.zero;
                 ingredient.GetComponent<Rigidbody>().isKinematic = true;
 
