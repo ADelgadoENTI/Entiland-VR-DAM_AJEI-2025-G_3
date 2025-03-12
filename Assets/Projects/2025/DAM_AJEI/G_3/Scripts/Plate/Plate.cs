@@ -31,7 +31,8 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
                 ingredient.GetComponent<DistanceGrabbable>().enabled = false;
                 ing.GetComponent<Rigidbody>().velocity = Vector3.zero;
                 ing.GetComponent<Rigidbody>().isKinematic = true;
-                
+                StartCoroutine(WaitToNextFrame(ingredient));
+
                 //Debug.Log($"{ingredient.name} placed on plate");
             }
             else
