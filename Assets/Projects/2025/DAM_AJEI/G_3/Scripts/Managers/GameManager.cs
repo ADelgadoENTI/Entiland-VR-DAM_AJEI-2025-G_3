@@ -15,6 +15,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
         public int completedDishes = 0;
         public TMP_Text texto;
         [SerializeField]private float _maxTimer;
+        public TabletLogic tablet;
 
         private void Awake()
         { 
