@@ -10,6 +10,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
         public GameObject client;
         public Transform[] spawnpoints;
         public GameObject goEat;
+        public Transform[] queuePositions;
         void Start()
         {
 
@@ -48,6 +49,11 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
                     }
                     clients = newClients;
                 }
+            }
+            for(int i = 0; i < clients.Length; i++)
+            {
+                clients[i].TryGetComponent(out ClientMovement cL);
+                cL.objectivePosition = queuePositions[i].position;
             }
         }
     }
