@@ -12,6 +12,8 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
 
         [SerializeField] private Image _timeBar;
 
+        private ClientMovement client;
+
         private void Start()
         {
             _timeMaxCounter = _timeMax;
@@ -22,6 +24,8 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
             if (_timeMaxCounter <= 0)
             {
                 gameObject.SetActive(false);
+                client.FinishDish();
+
             }
             else
             {
@@ -33,10 +37,14 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
             }
         }
 
-        public void SetTime(float time)
+        public void SetTime(float time, ClientMovement clientNew)
         {
             _timeMax = time;
             _timeMaxCounter = _timeMax;
+
+            client = clientNew;
         }
+
+
     }
 }
