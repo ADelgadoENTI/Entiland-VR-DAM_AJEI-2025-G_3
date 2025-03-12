@@ -1,5 +1,7 @@
 using Autohand;
+using System.Collections;
 using System.Net.NetworkInformation;
+using System.Net.Sockets;
 using UnityEngine;
 
 namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
@@ -18,7 +20,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
         {
             if (Socket != null)
             {
-                ingredient.parent = Socket;
+                
                 
                 //Debug.LogWarning($"{ingredient.name}: Placed on Socket");
                 Plate.AddIngridient(ingredient.GetComponent<BaseIngredient>().Type);
@@ -27,12 +29,19 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
 
                 ingredient.GetComponent<Grabbable>().enabled = false;
                 ingredient.GetComponent<DistanceGrabbable>().enabled = false;
-                ingredient.localPosition = Vector3.zero;
+                StartCoroutine(WaitToNextFrame(ingredient));
             }
             else
             {
                 Debug.LogWarning("Socket is not assigned");
             }
+        }
+
+        private IEnumerator WaitToNextFrame(Transform ingredient)
+        {
+            yield return new WaitForEndOfFrame();
+            ingredient.parent = Socket;
+            ingredient.localPosition = Vector3.zero;
         }
     }
 }

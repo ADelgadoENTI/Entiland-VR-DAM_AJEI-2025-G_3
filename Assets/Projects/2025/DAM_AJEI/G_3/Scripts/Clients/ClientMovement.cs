@@ -41,6 +41,13 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
             }
         }
 
+        public void FinishDish()
+        {
+            finishedDish = true;
+            //hacer algo
+            Destroy(gameObject);
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Objective"))
