@@ -95,6 +95,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
                     _ingridientsGO.Clear();
                     _ingridients.Clear();
                     dish.transform.SetParent(null);
+                    HasIngridient = false;
                     GameManager.instance.DishCompleted();
                     break;
                 }
