@@ -1,28 +1,28 @@
 using System.Collections;
 using UnityEngine;
 
-public class Container : MonoBehaviour
+namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
 {
-    private Mesh _mesh;
-
-    private void Start()
+    public class Container : MonoBehaviour
     {
-        _mesh = GetComponent<Mesh>();
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == "Ingridient" || other.tag == "Dish")
+        private bool _isSquashing;
+        private void OnTriggerEnter(Collider other)
         {
-            Destroy(other.gameObject);
-            StartCoroutine(SquashAndStretch());
+            if (other.GetComponent<BaseIngredient>() || other.GetComponent<Dish>())
+            {
+                Destroy(other.gameObject);
+                if (!_isSquashing ) StartCoroutine(SquashAndStretch());
+            }
         }
-    }
 
-    private IEnumerator SquashAndStretch()
-    {
-        Vector3 newScale = new Vector3(0.9f, 1.1f, 1);
-        transform.localScale = newScale;
-        yield return new WaitForSeconds(.5f);
-        transform.localScale = Vector3.one;
+        private IEnumerator SquashAndStretch()
+        {
+            _isSquashing = true;
+            Vector3 newScale = new Vector3(1f, 1.3f, 0.8f);
+            transform.localScale = newScale;
+            yield return new WaitForSeconds(.2f);
+            transform.localScale = Vector3.one;
+            _isSquashing = false;
+        }
     }
 }
