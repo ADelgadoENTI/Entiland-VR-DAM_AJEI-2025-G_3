@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 187380003}
   m_Layer: 0
   m_Name: Limit1
-  m_TagString: limit
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -505,7 +505,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1442560543}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.596, y: -0.542, z: 0}
+  m_LocalPosition: {x: -1.03, y: -0.542, z: 0}
   m_LocalScale: {x: 0.27122322, y: 0.27122322, z: 0.27122322}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -629,7 +629,7 @@ GameObject:
   - component: {fileID: 1588486325}
   m_Layer: 0
   m_Name: Limit2
-  m_TagString: limit
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

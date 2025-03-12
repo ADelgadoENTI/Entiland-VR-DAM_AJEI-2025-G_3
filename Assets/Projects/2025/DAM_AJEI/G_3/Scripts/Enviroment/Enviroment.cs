@@ -40,7 +40,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag("limit"))
+            if (other.gameObject.CompareTag("Obstacle"))
             {
                 StartCoroutine(Persons());
             }
