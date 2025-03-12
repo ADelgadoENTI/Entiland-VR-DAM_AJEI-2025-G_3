@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 448d41484a5ce6d4882d69640121d595, type: 3}
   m_Name: Recipe_Burger_Cockroach
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 2e3d065b5f938cb4bbae6232cbfd2f22, type: 3}
   Prefab: {fileID: 2349299989643623863, guid: f3a97db22fcb0f442819df38a6bc5d90, type: 3}
   Time: 120
   Ingridients:

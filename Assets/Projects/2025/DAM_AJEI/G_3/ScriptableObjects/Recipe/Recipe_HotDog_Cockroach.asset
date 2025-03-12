@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 448d41484a5ce6d4882d69640121d595, type: 3}
   m_Name: Recipe_HotDog_Cockroach
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: a1cc8f43b0270184bb0f62401bfa9d34, type: 3}
   Prefab: {fileID: 5180922292289606339, guid: 34be32b25ea66f741912412fc5383d42, type: 3}
   Time: 20
   Ingridients:

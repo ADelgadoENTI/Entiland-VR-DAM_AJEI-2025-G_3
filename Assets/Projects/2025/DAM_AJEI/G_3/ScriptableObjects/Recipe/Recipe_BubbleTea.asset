@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 448d41484a5ce6d4882d69640121d595, type: 3}
   m_Name: Recipe_BubbleTea
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 74e721ff6b5495e4898bedfc8f3bf759, type: 3}
   Prefab: {fileID: 8270118910425672232, guid: d20a1b27541cda84f9d3cdb968671f06, type: 3}
   Time: 20
   Ingridients:

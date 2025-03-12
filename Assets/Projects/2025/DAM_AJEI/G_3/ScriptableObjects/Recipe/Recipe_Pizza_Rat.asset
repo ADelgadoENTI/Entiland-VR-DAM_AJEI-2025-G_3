@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 448d41484a5ce6d4882d69640121d595, type: 3}
   m_Name: Recipe_Pizza_Rat
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 4b2a3f19154ae7c42ba432589eebe39b, type: 3}
   Prefab: {fileID: 1305253298424121216, guid: 2ea1f8e0bab23d3408ddc969abd1437a, type: 3}
   Time: 20
   Ingridients:
