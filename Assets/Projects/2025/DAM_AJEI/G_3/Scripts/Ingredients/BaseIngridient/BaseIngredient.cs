@@ -19,7 +19,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
             if (Socket != null)
             {
                 ingredient.parent = Socket;
-                ingredient.localPosition = Vector3.zero;
+                
                 //Debug.LogWarning($"{ingredient.name}: Placed on Socket");
                 Plate.AddIngridient(ingredient.GetComponent<BaseIngredient>().Type);
                 ingredient.GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -27,6 +27,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
 
                 ingredient.GetComponent<Grabbable>().enabled = false;
                 ingredient.GetComponent<DistanceGrabbable>().enabled = false;
+                ingredient.localPosition = Vector3.zero;
             }
             else
             {
