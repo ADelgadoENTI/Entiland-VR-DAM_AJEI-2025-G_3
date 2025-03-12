@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sprite: {fileID: 0}
   Prefab: {fileID: 4070540128545180300, guid: f02defc294b82d245ad7ed98161b65fb, type: 3}
-  Time: 0
+  Time: 20
   Ingridients:
   - Category: 7
   - Category: 0

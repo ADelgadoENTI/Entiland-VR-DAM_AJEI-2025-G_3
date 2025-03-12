@@ -1,3 +1,4 @@
+using Autohand;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,6 +23,8 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
 
             pedido = recipes[rand];
             paciencia = Random.Range(0, 31);
+
+            Debug.Log(pedido.ID);
         }
 
         private IEnumerator GoStreet()
@@ -48,7 +51,6 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
                     if (!dishAnnounced)
                     {
                         GameManager.instance.tablet.ActivePedido(pedido, paciencia, this);
-                        Debug.Log("Tabelt");
                         dishAnnounced = true;
                     }
                 }
@@ -66,6 +68,16 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
 
         public void PedidoEntregado()
         {
+
+            foreach (GameObject pedidos in GameManager.instance.tablet.pedidos)
+            {
+                if (pedidos.GetComponent<PedidoTablet>().pedido.ID == pedido.ID)
+                {
+                    pedidos.GetComponent<PedidoTablet>().ReserTimeBar();
+                    break;
+                }
+            }
+
             FinishDish();
         }
 
@@ -77,7 +89,16 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
             }
             else if(other.TryGetComponent(out Dish d))
             {
-                if(d.id == pedido.ID) PedidoEntregado();
+
+                if (d.id == pedido.ID) 
+                { 
+                    PedidoEntregado();
+                    Debug.Log(d.id);
+                }
+                    Debug.Log("Echo");
+
+                other.GetComponent<Grabbable>().enabled = false;
+                Destroy(other.gameObject);
             }
         }
     }
