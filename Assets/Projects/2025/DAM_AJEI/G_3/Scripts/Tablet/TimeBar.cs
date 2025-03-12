@@ -24,7 +24,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
             if (_timeMaxCounter <= 0)
             {
                 gameObject.SetActive(false);
-                client.FinishDish();
+                if (client != null) client.FinishDish();
 
             }
             else
@@ -43,6 +43,14 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
             _timeMaxCounter = _timeMax;
 
             client = clientNew;
+        }
+
+        public void Resert()
+        {
+            gameObject.SetActive(false);
+            client = null;
+            _timeMax = 0;
+            _timeMaxCounter = 0;
         }
 
 

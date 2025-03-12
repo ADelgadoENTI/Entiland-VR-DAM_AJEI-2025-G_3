@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 448d41484a5ce6d4882d69640121d595, type: 3}
   m_Name: Recipe_HotDog_Rat
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 9a82678c0304e8e4297f0364a5f73a9b, type: 3}
   Prefab: {fileID: 4070540128545180300, guid: f02defc294b82d245ad7ed98161b65fb, type: 3}
-  Time: 0
+  Time: 20
   Ingridients:
   - Category: 7
   - Category: 0

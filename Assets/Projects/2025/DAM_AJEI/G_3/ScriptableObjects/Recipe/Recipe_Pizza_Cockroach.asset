@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 448d41484a5ce6d4882d69640121d595, type: 3}
   m_Name: Recipe_Pizza_Cockroach
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 2f9a7d9e6b24e274391e37c27525555d, type: 3}
   Prefab: {fileID: 1717313004987200760, guid: a0ba3363a99d8bd40a9428530de1a6dc, type: 3}
-  Time: 0
+  Time: 20
   Ingridients:
   - Category: 8
   - Category: 9
