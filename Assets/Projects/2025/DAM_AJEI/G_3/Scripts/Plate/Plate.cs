@@ -1,6 +1,7 @@
 using Autohand;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
@@ -11,20 +12,16 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
         [SerializeField] private Menu _menu;
 
         private Dictionary<IngredientType, int> _ingridients = new Dictionary<IngredientType, int>();
-        private List<GameObject> _ingridientsGO = new List<GameObject>();
+        public List<GameObject> _ingridientsGO = new List<GameObject>();
 
-        public bool HasIngridient;
 
         public void PlaceInSocket(Transform ingredient)
         {
             if (_socket != null)
             {
-                
                 //ingredient.position = _socket.position;
                 BaseIngredient ing = ingredient.GetComponent<BaseIngredient>();
                 ing.IsOnPlate = true;
-                
-                HasIngridient = true;
                 IngredientType type = ing.Type;
                 ing.Plate = this;
                 AddIngridient(type, ingredient.gameObject);
@@ -45,12 +42,24 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
         private IEnumerator WaitToNextFrame(Transform ingredient)
         {
             yield return new WaitForEndOfFrame();
-            ingredient.parent = _socket;
+            ingredient.GetComponentInChildren<MeshCollider>().enabled = false;
+            ingredient.GetComponent<BoxCollider>().enabled = false;
+            if(_ingridientsGO.Count != 1)
+            {
+                GameObject go = _ingridientsGO[_ingridientsGO.Count - 2];
+                ingredient.SetParent(go.GetComponent<BaseIngredient>().Socket);
+            }
+            else
+            {
+                ingredient.SetParent(_socket);
+            }
+            
             ingredient.localPosition = Vector3.zero;
         }
         
         public void AddIngridient(IngredientType type, GameObject ingredient)
         {
+            _ingridientsGO.Add(ingredient);
             //Debug.LogWarning(type);
             if (_ingridients.ContainsKey(type))
             {
@@ -60,7 +69,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
             {
                 _ingridients.Add(type, 1);
             }
-            _ingridientsGO.Add(ingredient);
+            
             //Debug.Log($"{type} exists {_ingridients[type]}");
             StartCoroutine(CheckRecipe());
         }
@@ -95,7 +104,6 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
                     _ingridientsGO.Clear();
                     _ingridients.Clear();
                     dish.transform.SetParent(null);
-                    HasIngridient = false;
                     GameManager.instance.DishCompleted();
                     break;
                 }

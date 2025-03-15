@@ -16,6 +16,8 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
         public TMP_Text texto;
         [SerializeField]private float _maxTimer;
         public TabletLogic tablet;
+        public MeshFilter Cartel;
+        public Mesh CartelOpen;
 
         private void Awake()
         { 
@@ -78,6 +80,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
             texto.text = "OPEN";
             Debug.Log("Start");
             matchStarted = true;
+            Cartel.mesh = CartelOpen;
         }
 
     }

@@ -16,6 +16,8 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
         public Recipe pedido;
         private float paciencia; 
         private bool dishAnnounced = false;
+        public GameObject ParticlesWin;
+        public GameObject ParticlesLoose;
         void Start()
         {
             StartCoroutine(GoStreet());
@@ -94,7 +96,12 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
                 if (d.id == pedido.ID) 
                 { 
                     PedidoEntregado();
+                    Instantiate(ParticlesWin, transform.position, transform.rotation);
                     Debug.Log(d.id);
+                }
+                else
+                {
+                    Instantiate(ParticlesLoose, transform.position, transform.rotation);
                 }
                     Debug.Log("Echo");
 
