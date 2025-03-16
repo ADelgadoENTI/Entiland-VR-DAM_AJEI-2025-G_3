@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 947470805956538488}
   - component: {fileID: 6514870506641279171}
   - component: {fileID: 6966216451360716211}
+  - component: {fileID: 2439840252620859683}
   m_Layer: 0
   m_Name: Rat
   m_TagString: Untagged
@@ -238,6 +239,27 @@ MonoBehaviour:
   StopSelecting:
     m_PersistentCalls:
       m_Calls: []
+--- !u!95 &2439840252620859683
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2296557184096055878}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6393364bd5d511d4fb8deb0fbd34cb85, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5005880106764296350
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,7 +301,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5005880106764296350}
-  m_Mesh: {fileID: 1578207650738979403, guid: 74ebe8a96a683a347b476960519aa5dc, type: 3}
+  m_Mesh: {fileID: 2745544798294033895, guid: f38edd14441cbdb46b93e5d1b5ced2f7, type: 3}
 --- !u!23 &7245735256775312354
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -300,7 +322,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2b044be7d7b85f6499e5bb1313ade3e9, type: 2}
+  - {fileID: -2538346941777572729, guid: f38edd14441cbdb46b93e5d1b5ced2f7, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
