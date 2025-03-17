@@ -25,10 +25,13 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
             if (direction)
             {
                 transform.position += new Vector3(0, 0, 1) * Time.deltaTime * Realspeed;
+                transform.rotation = Quaternion.Euler(0, -90, 0);
+
             }
             else
             {
                 transform.position += new Vector3(0, 0, -1) * Time.deltaTime * Realspeed;
+                transform.rotation = Quaternion.Euler(0, 90, 0);
             }
 
             if (stop)
@@ -51,14 +54,15 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
             stop = true;
             yield return new WaitForSeconds(Random.Range(1, 5));
 
-            rand = Random.Range(0, 2);
+            //rand = Random.Range(0, 2);
+            rand = 1;
             if (rand == 1)
             {
                 if (direction == true)
                 {
                     direction = false;
                     stop = false;
-                    Realspeed = speed;
+                    Realspeed = speed;                  
                 }
                 else
                 {
