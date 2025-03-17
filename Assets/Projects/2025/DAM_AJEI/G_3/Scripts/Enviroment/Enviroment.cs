@@ -24,11 +24,11 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
         {
             if (direction)
             {
-                transform.position += new Vector3(1, 0, 0) * Time.deltaTime * Realspeed;
+                transform.position += new Vector3(0, 0, 1) * Time.deltaTime * Realspeed;
             }
             else
             {
-                transform.position += new Vector3(-1, 0, 0) * Time.deltaTime * Realspeed;
+                transform.position += new Vector3(0, 0, -1) * Time.deltaTime * Realspeed;
             }
 
             if (stop)
