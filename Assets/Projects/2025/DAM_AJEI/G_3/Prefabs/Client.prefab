@@ -134,6 +134,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 68f85c66defea4049bb07f00976359b8, type: 2}
   - {fileID: 11400000, guid: c5072335d2d2a634f8be89dab8d8adbc, type: 2}
   pedido: {fileID: 0}
+  ParticlesWin: {fileID: 4288234868160211123, guid: 05df2566ebdfd6a48949f82f917e7b30, type: 3}
+  ParticlesLoose: {fileID: 7434387444068850075, guid: 8ecc99cfe075c3549a32aaa2ce2b7bca, type: 3}
 --- !u!54 &887666179611960911
 Rigidbody:
   m_ObjectHideFlags: 0
