@@ -81,7 +81,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
                         }
                     }
                 }
-                int tempLen = 4 - newClients.Length;
+                int tempLen = 4 - temp;
                 if (tempLen > 0)
                 {
                     for (int i = 0; i < 4; i++)
@@ -102,6 +102,10 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
                     if (clients[i].TryGetComponent(out ClientMovement cL))
                     {
                         cL.objectivePosition = queuePositions[i].position;
+                        if (queuePositions[i] == queuePositions[0])
+                        {
+                            cL.iniciarPedido = true;
+                        }
                     }
                 }
                 catch

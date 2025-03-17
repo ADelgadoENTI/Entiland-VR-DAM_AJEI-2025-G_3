@@ -14,6 +14,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
         public bool finishedDish = false;
         public List<Recipe> recipes;
         public Recipe pedido;
+        public bool iniciarPedido = false;
         private float paciencia; 
         private bool dishAnnounced = false;
         void Start()
@@ -48,10 +49,13 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
                 }
                 else
                 {
-                    if (!dishAnnounced)
+                    if (iniciarPedido)
                     {
-                        GameManager.instance.tablet.ActivePedido(pedido, paciencia, this);
-                        dishAnnounced = true;
+                        if (!dishAnnounced)
+                        {
+                            GameManager.instance.tablet.ActivePedido(pedido, paciencia, this);
+                            dishAnnounced = true;
+                        }
                     }
                 }
                 yield return new WaitForEndOfFrame();
