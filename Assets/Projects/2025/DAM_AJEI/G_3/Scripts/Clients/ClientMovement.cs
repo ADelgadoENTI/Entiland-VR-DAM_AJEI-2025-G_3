@@ -39,8 +39,8 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
             paciencia = Random.Range(0, 31);
 
             Debug.Log(pedido.ID);
-            MeshRenderer = GetComponent<MeshRenderer>();
-            MeshFilter = GetComponent<MeshFilter>();
+            MeshRenderer = GetComponentInChildren<MeshRenderer>();
+            MeshFilter = GetComponentInChildren<MeshFilter>();
             int randomMesh = Random.Range(0, Meshes.Length);
             MeshFilter.mesh = Meshes[randomMesh];
             MeshRenderer.material = Materials[randomMesh];
