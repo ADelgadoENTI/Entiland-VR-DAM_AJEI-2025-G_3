@@ -2852,7 +2852,7 @@ MonoBehaviour:
   matchStarted: 0
   completedDishes: 0
   texto: {fileID: 1808724903}
-  _maxTimer: 5
+  _maxTimer: 120
   tablet: {fileID: 1452073667}
   Cartel: {fileID: 612451951}
   CartelOpen: {fileID: 5058049025336763574, guid: 8d3d11791b072944999a2043697d637c, type: 3}
