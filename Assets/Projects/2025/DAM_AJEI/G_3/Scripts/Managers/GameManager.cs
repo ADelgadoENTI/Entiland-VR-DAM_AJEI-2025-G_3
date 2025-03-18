@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
 {
@@ -18,6 +19,9 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
         public TabletLogic tablet;
         public MeshFilter Cartel;
         public Mesh CartelOpen;
+        public int TotalClients;
+        public int ClientsSatisfied;
+        public Light PointLightCartel;
 
         private void Awake()
         { 
@@ -81,6 +85,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
             Debug.Log("Start");
             matchStarted = true;
             Cartel.mesh = CartelOpen;
+            PointLightCartel.color = Color.green;
         }
 
     }

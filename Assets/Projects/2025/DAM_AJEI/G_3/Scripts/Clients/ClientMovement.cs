@@ -73,6 +73,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
                         {
                             GameManager.instance.tablet.ActivePedido(pedido, paciencia, this);
                             AudioSource.PlayOneShot(AudioClipBell);
+                            if(GameManager.instance.matchStarted) GameManager.instance.TotalClients++;
                             dishAnnounced = true;
                         }
                     }
@@ -116,9 +117,10 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
 
                 if (d.id == pedido.ID) 
                 { 
-                    PedidoEntregado();
+                    
                     Instantiate(ParticlesWin, transform.position, transform.rotation);
                     AudioSource.PlayOneShot(AudioClipCorrect);
+                    if (GameManager.instance.matchStarted) GameManager.instance.ClientsSatisfied++;
                     StartCoroutine(WaitForAudio());
                     Debug.Log(d.id);
                 }
@@ -127,8 +129,9 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
                     Instantiate(ParticlesLoose, transform.position, transform.rotation);
                     AudioSource.PlayOneShot(AudioClipWrong);
                 }
-                    //Debug.Log("Echo");
+                //Debug.Log("Echo");
 
+                PedidoEntregado();
                 other.GetComponent<Grabbable>().enabled = false;
                 Destroy(other.gameObject);
             }
