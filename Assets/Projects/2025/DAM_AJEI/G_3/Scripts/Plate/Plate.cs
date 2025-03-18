@@ -10,6 +10,8 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
     {
         [SerializeField] private Transform _socket;
         [SerializeField] private Menu _menu;
+        [SerializeField] private AudioSource _audioSource;
+        [SerializeField] private AudioClip _putItem;
 
         private Dictionary<IngredientType, int> _ingridients = new Dictionary<IngredientType, int>();
         public List<GameObject> _ingridientsGO = new List<GameObject>();
@@ -69,7 +71,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
             {
                 _ingridients.Add(type, 1);
             }
-            
+            _audioSource.PlayOneShot(_putItem);
             //Debug.Log($"{type} exists {_ingridients[type]}");
             StartCoroutine(CheckRecipe());
         }

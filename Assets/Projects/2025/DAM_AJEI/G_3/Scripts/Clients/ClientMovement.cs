@@ -23,7 +23,13 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
         public AudioSource AudioSource;
         public AudioClip AudioClipCorrect;
         public AudioClip AudioClipWrong;
+        public AudioClip AudioClipBell;
         public AudioClip[] AudioClipsThanks;
+
+        private MeshRenderer MeshRenderer;
+        private MeshFilter MeshFilter;
+        public Mesh[] Meshes;
+        public Material[] Materials;
         void Start()
         {
             StartCoroutine(GoStreet());
@@ -33,6 +39,11 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
             paciencia = Random.Range(0, 31);
 
             Debug.Log(pedido.ID);
+            MeshRenderer = GetComponent<MeshRenderer>();
+            MeshFilter = GetComponent<MeshFilter>();
+            int randomMesh = Random.Range(0, Meshes.Length);
+            MeshFilter.mesh = Meshes[randomMesh];
+            MeshRenderer.material = Materials[randomMesh];
         }
 
         private IEnumerator GoStreet()
@@ -61,6 +72,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
                         if (!dishAnnounced)
                         {
                             GameManager.instance.tablet.ActivePedido(pedido, paciencia, this);
+                            AudioSource.PlayOneShot(AudioClipBell);
                             dishAnnounced = true;
                         }
                     }
@@ -115,7 +127,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
                     Instantiate(ParticlesLoose, transform.position, transform.rotation);
                     AudioSource.PlayOneShot(AudioClipWrong);
                 }
-                    Debug.Log("Echo");
+                    //Debug.Log("Echo");
 
                 other.GetComponent<Grabbable>().enabled = false;
                 Destroy(other.gameObject);
