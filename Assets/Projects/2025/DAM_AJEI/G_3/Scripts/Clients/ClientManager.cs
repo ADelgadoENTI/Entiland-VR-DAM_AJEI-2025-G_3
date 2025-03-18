@@ -38,7 +38,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
             {
                 clients[i] = Instantiate(client, spawnpoints[Random.Range(0, 2)].transform.position, Quaternion.identity);
                 clients[i].gameObject.transform.rotation = Quaternion.LookRotation(goEat.transform.position - clients[i].transform.position, Vector3.up);
-                yield return new WaitForSeconds(.25f);
+                yield return new WaitForSeconds(.5f);
             }
             NextClient();
         }
