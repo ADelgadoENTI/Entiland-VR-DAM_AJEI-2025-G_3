@@ -19,6 +19,11 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
         private bool dishAnnounced = false;
         public GameObject ParticlesWin;
         public GameObject ParticlesLoose;
+
+        public AudioSource AudioSource;
+        public AudioClip AudioClipCorrect;
+        public AudioClip AudioClipWrong;
+        public AudioClip[] AudioClipsThanks;
         void Start()
         {
             StartCoroutine(GoStreet());
@@ -101,17 +106,26 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
                 { 
                     PedidoEntregado();
                     Instantiate(ParticlesWin, transform.position, transform.rotation);
+                    AudioSource.PlayOneShot(AudioClipCorrect);
+                    StartCoroutine(WaitForAudio());
                     Debug.Log(d.id);
                 }
                 else
                 {
                     Instantiate(ParticlesLoose, transform.position, transform.rotation);
+                    AudioSource.PlayOneShot(AudioClipWrong);
                 }
                     Debug.Log("Echo");
 
                 other.GetComponent<Grabbable>().enabled = false;
                 Destroy(other.gameObject);
             }
+        }
+
+        private IEnumerator WaitForAudio()
+        {
+            yield return new WaitForSeconds(AudioClipCorrect.length);
+            AudioSource.PlayOneShot(AudioClipsThanks[Random.Range(0, AudioClipsThanks.Length)]);
         }
     }
 }

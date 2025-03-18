@@ -5,6 +5,8 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
 {
     public class Container : MonoBehaviour
     {
+        [SerializeField] private AudioSource _audioSource;
+        [SerializeField] private AudioClip _audioClip;
         private bool _isSquashing;
         private void OnTriggerEnter(Collider other)
         {
@@ -23,6 +25,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_TRES
             yield return new WaitForSeconds(.2f);
             transform.localScale = Vector3.one;
             _isSquashing = false;
+            _audioSource.PlayOneShot(_audioClip);
         }
     }
 }
